@@ -7,6 +7,7 @@ from app.services.chunking_service import ChunkingService
 from app.services.embedding_service import EmbeddingService
 from app.services.storage_service import StorageService
 from app.services.llm_service import LLMService
+from app.services.reranker_service import RerankerService
 
 
 def get_db():
@@ -39,3 +40,7 @@ def get_storage_service() -> StorageService:
 _llm_service = LLMService()
 def get_llm_service() -> LLMService:
     return LLMService()
+
+_reranker_service = RerankerService()
+def get_reranker_service() -> RerankerService:
+    return _reranker_service

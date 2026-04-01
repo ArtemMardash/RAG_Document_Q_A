@@ -20,7 +20,7 @@ class ChunkRepository:
         self.db.bulk_save_objects(chunk_objects)
         self.db.commit()
 
-    def similarity_search(self, query_embedding: list[float], top_k: int = 5) -> list[tuple]:
+    def similarity_search_ann(self, query_embedding: list[float], top_k: int = 20) -> list[tuple]:
         return self.db.execute(
             text("""
                  SELECT id, document_id, content, chunk_index
